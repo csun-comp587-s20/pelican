@@ -102,11 +102,3 @@ class TestFunctionality(unittest.TestCase):
 
         for date in invalid_dates:
             self.assertRaises(ValueError, utils.get_date, date)
-
-
-
-
-
-
-
-
