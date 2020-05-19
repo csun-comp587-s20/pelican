@@ -173,3 +173,4 @@ class TestFunctionality(unittest.TestCase):
         self.assertTrue(zero_count == '0 Words')
         self.assertTrue(one_count == '1 Word')
         self.assertTrue(more_than_one == '3 Words')
+
