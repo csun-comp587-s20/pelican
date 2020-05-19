@@ -12,12 +12,15 @@ However, I was not able to get the coverage report for the specific files I've
 altered due to the internal workings of Pelican and the vast number
 of dependencies involved which constantly led to errors with running `coverage.py`.
 
-### Automated Testing
-Automated testing was not used for this project.
-
 ##### Link to Repository
 https://github.com/csun-comp587-s20/pelican/pelican/tests/test_functionality.py
 on the `master` branch of `csun-comp-587-s20` organization.
+
+### Automated Testing
+The initial intention outlined in my project proposal suggests the utilization of
+a grammar-based approach to test the linter system of Pelican. However, due to the convoluted nature of the program, 
+automated testing was an unsuccessful task.
+
 
 ### Lessons Learned
 * The Pelican project was found to be slightly too complicated for me  to write tests for as 
