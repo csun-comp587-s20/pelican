@@ -1,4 +1,4 @@
-# Project Report - Pelican
+# Project Final Report - Pelican
 Pelican is a static site generator written in Python.
 Unit testing was performed on this repository.
 
@@ -13,7 +13,7 @@ altered due to the internal workings of Pelican and the vast number
 of dependencies involved which constantly led to errors with running `coverage.py`.
 
 ##### Link to Repository
-https://github.com/csun-comp587-s20/pelican/pelican/tests/test_functionality.py
+https://github.com/csun-comp587-s20/pelican/blob/master/pelican/tests/test_functionality.py
 on the `master` branch of `csun-comp-587-s20` organization.
 
 ### Automated Testing
