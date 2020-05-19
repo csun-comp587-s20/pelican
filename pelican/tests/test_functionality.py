@@ -150,3 +150,24 @@ class TestFunctionality(unittest.TestCase):
                                        Author('Sean', 'DEFAULT')]
         content = Page(**args)
         self.assertTrue(content.authors)
+
+    def test_shorten_html_text(self):
+        html = 'plain text'
+        truncate = utils.truncate_html_words(html, 10)
+
+        self.assertEqual(truncate, html)
+
+        html = 'single'
+        truncate = utils.truncate_html_words(html * 10, 10)
+
+        self.assertEqual(truncate, html * 10)
+
+    def test_pluralize_words_returns_correct_grammar(self):
+        # maybe_pluralize() in utils.py
+        zero_count = utils.maybe_pluralize(0, 'Word', 'Words')
+        one_count = utils.maybe_pluralize(1, 'Word', 'Words')
+        more_than_one = utils.maybe_pluralize(3, 'Word', 'Words')
+
+        self.assertTrue(zero_count == '0 Words')
+        self.assertTrue(one_count == '1 Word')
+        self.assertTrue(more_than_one == '3 Words')

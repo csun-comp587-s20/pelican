@@ -8,7 +8,9 @@ due to the complexity of the linting system within Pelican, I decided to
 write test suites to test Pelican's utility functionality.
 
 Code coverage was conducted with `coverage.py` (https://coverage.readthedocs.io/en/coverage-5.1/#).
-
+However, I was not able to get the coverage report for the specific files I've
+altered due to the internal workings of Pelican and the vast number
+of dependencies involved.
 
 ### Automated Testing
 Automated testing was not used for this project.
@@ -26,6 +28,6 @@ the project already involved meticulously tested code by its developers/contribu
 * With my current knowledge of utilizing verification testing techniques with technologies 
 alike Dafny, a verification testing approach could have been performed on this project.
 
-* Introducing property-based testing could prove to be useful to test this framework.
+* Introducing property-based testing could also prove to be useful to test this framework.
 
 
