@@ -2,7 +2,9 @@ import unittest
 import pytz
 
 from pelican import utils
+from pelican.contents import Page
 from pelican.settings import read_settings
+from pelican.urlwrappers import Author
 
 
 class TestFunctionality(unittest.TestCase):
@@ -102,3 +104,49 @@ class TestFunctionality(unittest.TestCase):
 
         for date in invalid_dates:
             self.assertRaises(ValueError, utils.get_date, date)
+
+    def test_props_must_exist(self):
+        page = Page('content')
+        self.assertFalse(page._has_valid_mandatory_properties())
+        new_page = Page('content', metadata={'title': 'Pelican'})
+        self.assertTrue(new_page._has_valid_mandatory_properties())
+
+    def test_set_default_language(self):
+        self.page_kwargs = {
+            'content': 'Content',
+            'context': {
+                'localsiteurl': '',
+            },
+            'metadata': {
+                'summary': 'Summary',
+                'title': 'Title',
+                'author': Author('Blogger', 'settings')
+            }
+        }
+        page = Page(**self.page_kwargs)
+        self.page_kwargs['metadata'].update({'lang': 'en'})
+        page = Page(**self.page_kwargs)
+        self.assertEqual(page.lang, 'en')
+
+    def test_article_with_more_than_one_authors(self):
+        self.page_kwargs = {
+            'content': 'Content',
+            'context': {
+                'localsiteurl': '',
+            },
+            'metadata': {
+                'summary': 'Summary',
+                'title': 'Title',
+                'author': Author('Tom', 'settings')
+            }
+        }
+        args = self.page_kwargs.copy()
+        content = Page(**args)
+        assert content.authors == [content.author]
+
+        args['metadata'].pop('author')
+        args['metadata']['authors'] = [Author('Tom', 'DEFAULT'),
+                                       Author('Jeff', 'DEFAULT'),
+                                       Author('Sean', 'DEFAULT')]
+        content = Page(**args)
+        self.assertTrue(content.authors)

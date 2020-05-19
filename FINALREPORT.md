@@ -1,0 +1,29 @@
+# Project Report - Pelican
+Pelican is a static site generator written in Python.
+Unit testing was performed on this repository.
+
+### Unit Testing with Sufficient Coverage
+Work was initially intended to test Pelican's linter. However,
+due to the complexity of the linting system within Pelican, I decided to 
+write test suites to test Pelican's utility functionality.
+
+Code coverage was conducted with `coverage.py` (https://coverage.readthedocs.io/en/coverage-5.1/#).
+
+
+### Automated Testing
+Automated testing was not used for this project.
+
+##### Link to Repository
+https://github.com/csun-comp587-s20/pelican/test/test_functionality.py
+on branch `test_util_functionality`.
+
+### Lessons Learned
+* The Pelican project was found to be slightly too complicated for me  to write tests for as 
+the project already involved meticulously tested code by its developers/contributors.
+
+* Being able to write and execute efficient test suites requires deep understanding of the project.
+
+* With my current knowledge of utilizing verification testing techniques with technologies 
+alike Dafny, a verification testing approach could be performed on this project.
+
+
