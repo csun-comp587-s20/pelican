@@ -129,6 +129,7 @@ class TestFunctionality(unittest.TestCase):
         self.assertEqual(page.lang, 'en')
 
     def test_article_with_more_than_one_authors(self):
+        # if more than one author
         self.page_kwargs = {
             'content': 'Content',
             'context': {
@@ -152,6 +153,7 @@ class TestFunctionality(unittest.TestCase):
         self.assertTrue(content.authors)
 
     def test_shorten_html_text(self):
+        # truncate_html_words in utils.py
         html = 'plain text'
         truncate = utils.truncate_html_words(html, 10)
 
