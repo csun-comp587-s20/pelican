@@ -14,7 +14,7 @@ Code coverage was conducted with `coverage.py` (https://coverage.readthedocs.io/
 Automated testing was not used for this project.
 
 ##### Link to Repository
-https://github.com/csun-comp587-s20/pelican/test/test_functionality.py
+https://github.com/csun-comp587-s20/pelican/tests/test_functionality.py
 on branch `test_util_functionality`.
 
 ### Lessons Learned
@@ -24,6 +24,8 @@ the project already involved meticulously tested code by its developers/contribu
 * Being able to write and execute efficient test suites requires deep understanding of the project.
 
 * With my current knowledge of utilizing verification testing techniques with technologies 
-alike Dafny, a verification testing approach could be performed on this project.
+alike Dafny, a verification testing approach could have been performed on this project.
+
+* Introducing property-based testing could prove to be useful to test this framework.
 
 
